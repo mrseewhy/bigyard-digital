@@ -40,16 +40,8 @@ export default function Hero() {
                 {/* ── Headline ── */}
                 <h1 className="font-display font-extrabold leading-none tracking-tight text-text-primary dark:text-dark-text-primary mb-6 max-w-4xl text-[clamp(40px,7vw,80px)]">
                     We Build Web Platforms That Make African Businesses Look{" "}
-                    <span className="relative inline-block">
-                        {/* The text itself stays dark in light mode for readability */}
-                        <span className="relative z-10 text-text-primary dark:text-accent">
-                            World-Class
-                        </span>
-                        {/* Lime highlight bar behind the text — light mode only */}
-                        <span
-                            className="absolute left-0 bottom-[0.12em] w-full dark:hidden rounded-sm z-0"
-                            style={{ height: "0.35em", background: "var(--color-accent)", opacity: 0.35 }}
-                        />
+                    <span className="text-accent-text dark:text-accent">
+                        World-Class
                     </span>
                 </h1>
 
