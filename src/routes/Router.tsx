@@ -6,6 +6,7 @@ import ServicesPage from "../pages/Services";
 import Contact from "../pages/Contact";
 import Portfolio from "../pages/Portfolio";
 import CaseStudy from "../pages/Casestudy";
+import NotFound from "../pages/Notfound";
 
 
 
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
             { path: "work", element: <Portfolio /> },
             { path: "work/:slug", element: <CaseStudy /> },
             { path: "contact", element: <Contact /> },
+            { path: "*", element: <NotFound /> },
         ]
     },
 

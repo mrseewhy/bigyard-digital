@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap");
-
 @theme {
   /* ── Fonts ── */
   --font-display: "Bricolage Grotesque", sans-serif;
@@ -47,14 +45,10 @@
   --radius-3xl: 1.5rem;
   --radius-4xl: 2rem;
 
-  /* --color-accent-hover: #d4eb2e;
-  --color-text-faint: #AAAAAA;
-  --color-dark-text-faint: #444444; */
-
-  /* Accent readable on light backgrounds */
+  /* ── Accent readable on light backgrounds ── */
   --color-accent-text: #6B7A00;
 
-  /* Subtle grid for hero */
+  /* ── Subtle grid ── */
   --color-grid-light: #00000008;
   --color-grid-dark: #ffffff08;
 }
