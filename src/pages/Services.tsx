@@ -8,7 +8,7 @@
 // ─────────────────────────────────────────────────────────────
 
 import { Link } from "react-router-dom";
-import PageHeader from "../components/Pageheader";
+import PageHeader from "../components/PageHeader";
 
 const SERVICES = [
     {

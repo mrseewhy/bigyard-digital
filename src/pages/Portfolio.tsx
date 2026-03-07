@@ -10,6 +10,8 @@ import PageHeader from "../components/PageHeader";
 import { CASE_STUDIES, CATEGORIES } from "../data/caseStudiesData";
 import type { CaseStudy } from "../data/caseStudiesData";
 
+// import type { CaseStudy } from "../data/caseStudiesData";
+
 function PortfolioCard({ study }: { study: CaseStudy }) {
     return (
         <Link
