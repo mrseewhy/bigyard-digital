@@ -7,7 +7,6 @@ const NAV_LINKS = [
     { label: "About Us", to: "/about" },
     { label: "Services", to: "/services" },
     { label: "Portfolio", to: "/work" },
-    { label: "Case Studies", to: "/case-studies" },
 ];
 
 export default function Navbar() {
