@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-const STATS = [
-  { value: "60+", label: "Clients served" },
-  { value: "100+", label: "Projects delivered" },
-  { value: "7+", label: "Years building" },
-];
+// const STATS = [
+//   { value: "60+", label: "Clients served" },
+//   { value: "100+", label: "Projects delivered" },
+//   { value: "7+", label: "Years building" },
+// ];
 
 export default function Hero() {
   return (
