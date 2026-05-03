@@ -6,32 +6,32 @@
   --font-body: "Inter", sans-serif;
 
   /* ── Brand Colors ── */
-  --color-accent: #E8FF47;
+  --color-accent: #e8ff47;
   --color-accent-hover: #d4eb2e;
 
   /* ── Light Surface ── */
-  --color-surface: #FFFFFF;
-  --color-surface-2: #F8F8F5;
-  --color-surface-3: #F0F0EB;
-  --color-border: #E5E5E0;
-  --color-border-2: #D0D0CB;
+  --color-surface: #ffffff;
+  --color-surface-2: #f8f8f5;
+  --color-surface-3: #f0f0eb;
+  --color-border: #e5e5e0;
+  --color-border-2: #d0d0cb;
 
   /* ── Dark Surface ── */
-  --color-dark-base: #0A0A0A;
+  --color-dark-base: #0a0a0a;
   --color-dark-2: #111111;
-  --color-dark-3: #1A1A1A;
-  --color-dark-border: #1F1F1F;
-  --color-dark-border-2: #2A2A2A;
+  --color-dark-3: #1a1a1a;
+  --color-dark-border: #1f1f1f;
+  --color-dark-border-2: #2a2a2a;
 
   /* ── Text ── */
-  --color-text-primary: #0A0A0A;
+  --color-text-primary: #0a0a0a;
   --color-text-secondary: #525252;
   --color-text-muted: #888888;
-  --color-text-faint: #AAAAAA;
+  --color-text-faint: #aaaaaa;
 
   /* ── Dark Text ── */
-  --color-dark-text-primary: #FAFAFA;
-  --color-dark-text-secondary: #AAAAAA;
+  --color-dark-text-primary: #fafafa;
+  --color-dark-text-secondary: #aaaaaa;
   --color-dark-text-muted: #666666;
   --color-dark-text-faint: #444444;
 
@@ -46,7 +46,7 @@
   --radius-4xl: 2rem;
 
   /* ── Accent readable on light backgrounds ── */
-  --color-accent-text: #6B7A00;
+  --color-accent-text: #6b7a00;
 
   /* ── Subtle grid ── */
   --color-grid-light: #00000008;
@@ -79,5 +79,42 @@
   h5,
   h6 {
     font-family: var(--font-display);
+  }
+  :root {
+    --logo-invert: 0;
+  }
+  .dark {
+    --logo-invert: 1;
+  }
+
+  /* ── Logo scroll animation ── */
+  @keyframes scroll-logos {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ── Pause on hover ── */
+  .group:hover ~ div,
+  div:has(.group:hover) {
+    animation-play-state: paused;
+  }
+
+  /* ── Respect reduced motion preference ── */
+  @media (prefers-reduced-motion: reduce) {
+    [style*="scroll-logos"] {
+      animation: none;
+    }
+  }
+
+  /* ── Logo invert for dark mode ── */
+  :root {
+    --logo-invert: 0;
+  }
+  .dark {
+    --logo-invert: 1;
   }
 }

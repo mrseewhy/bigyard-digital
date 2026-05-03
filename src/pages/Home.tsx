@@ -1,21 +1,23 @@
-import Credibility from "../components/Credibility"
-import CTABlock from "../components/CTABlock"
-import Hero from "../components/Hero"
-import Services from "../components/Services"
-import Testimonials from "../components/Testimonials"
-import WhoWeAre from "../components/WhoWeAre"
+import CTABlock from "../components/CTABlock";
+import Hero from "../components/MainHero";
+import Credibility from "../components/NewCredibility";
+import Services from "../components/NewServices";
+import WhoWeAre from "../components/NewWhoWeAre";
+import ClientsImages from "../components/OtherClientsImage";
+import Testimonials from "../components/Testimonials";
 
 const Home = () => {
-    return (
-        <div>
-            <Hero />
-            <Credibility />
-            <WhoWeAre />
-            <Services />
-            <Testimonials />
-            <CTABlock />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Hero />
+      <ClientsImages />
+      <Credibility />
+      <WhoWeAre />
+      <Services />
+      <Testimonials />
+      <CTABlock />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
