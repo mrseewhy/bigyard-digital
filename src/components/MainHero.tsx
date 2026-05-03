@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 const STATS = [
-  { value: "20+", label: "Global clients served" },
-  { value: "100+", label: "Developers trained" },
+  { value: "100+", label: "Global clients served" },
+  { value: "1000+", label: "Developers trained" },
   { value: "7+", label: "Years of excellence" },
 ];
 
@@ -18,7 +18,7 @@ export default function Hero() {
         backgroundSize: "72px 72px",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-24">
+      <div className="max-w-7xl mx-auto px-6 pt-20 pb-20">
         {/* ── Location Tag ── */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border dark:border-dark-border bg-surface dark:bg-dark-2 mb-10">
           <span className="text-accent-text dark:text-accent text-xs">●</span>
@@ -28,7 +28,7 @@ export default function Hero() {
         </div>
 
         {/* ── Headline ── */}
-        <h1 className="font-display font-extrabold leading-none tracking-tight text-text-primary dark:text-dark-text-primary mb-6 max-w-4xl text-[clamp(40px,7vw,80px)]">
+        <h1 className="font-display font-extrabold leading-none tracking-tight text-text-primary dark:text-dark-text-primary mb-6 max-w-5xl text-[clamp(40px,7vw,80px)]">
           We Build Web Platforms That Make African Businesses Look{" "}
           <span className="text-accent-text dark:text-accent">World-Class</span>
         </h1>
@@ -62,7 +62,7 @@ export default function Hero() {
         </div>
 
         {/* ── Stats ── */}
-        <div className="flex flex-wrap gap-x-12 gap-y-6 pt-10 border-t border-border dark:border-dark-border">
+        <div className="flex flex-wrap gap-x-12 gap-y-6 pt-2 border-t border-border dark:border-dark-border">
           {STATS.map(({ value, label }) => (
             <div key={value}>
               <p className="font-display font-extrabold text-4xl tracking-tight leading-none text-text-primary dark:text-dark-text-primary">

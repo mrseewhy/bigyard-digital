@@ -1,39 +1,38 @@
-// ─────────────────────────────────────────────────────────────
-// Credibility Section
-// ─────────────────────────────────────────────────────────────
-
 import { Link } from "react-router-dom";
+import ProjectImage, {
+  ProjectImagePlaceholder,
+} from "../components/ProjectImage";
 
 const FEATURED = [
   {
     slug: "gates-foundation",
-    category: "International NGO",
-    title: "Built for global credibility",
+    category: "AI PLATFORM",
+    title: "Voice-first AI for African languages",
     outcome:
-      "Designed and developed a platform that positioned a foundation for international partnerships and funding conversations across multiple regions.",
-    metric: "International",
-    metricLabel: "Donor-facing reach",
-    image: "/images/work/gates-thumb.jpg",
+      "Designed and built the web platform for an AI product focused on speech models and voice agents for African languages.",
+    metric: "AI Product",
+    metricLabel: "Web platform",
+    image: "img/work/work-1.jpg",
   },
   {
     slug: "data-science-nigeria",
     category: "Tech Community",
-    title: "Scaled to 50,000+ users",
+    title: "Scaled to 100,000+ users",
     outcome:
-      "Redesigned the public platform for Nigeria's largest data science community, elevating their credibility with global academic and corporate partners.",
-    metric: "50,000+",
-    metricLabel: "Community members reached",
-    image: "/images/work/dsn-thumb.jpg",
+      "Redesigned and rebuilt the web platform for Nigeria’s leading data science community, improving usability, performance, and platform stability at scale.",
+    metric: "100,000+",
+    metricLabel: "Community reach",
+    image: "img/work/work-2.jpg",
   },
   {
     slug: "tradecrib",
-    category: "Real Estate",
-    title: "End-to-end product delivery",
+    category: "PUBLIC SECTOR",
+    title: "Platform for national rollout",
     outcome:
-      "From strategy to deployment — built a full-stack platform that supports real business operations in Nigeria's competitive real estate market.",
-    metric: "Full-stack",
-    metricLabel: "Strategy to deployment",
-    image: "/images/work/tradecrib-thumb.jpg",
+      "Designed and developed the web platform for a Google-backed initiative delivering digital skills and economic opportunities nationwide.",
+    metric: "Nationwide",
+    metricLabel: "Programme reach",
+    image: "img/work/work-3.jpg",
   },
 ];
 
@@ -87,7 +86,7 @@ export default function Credibility() {
                 className="group flex flex-col justify-between rounded-2xl border border-border dark:border-dark-border bg-surface-2 dark:bg-dark-base hover:border-border-2 dark:hover:border-dark-border-2 transition-colors duration-200 overflow-hidden"
               >
                 {/* ── Image ── */}
-                <div className="w-full aspect-[16/9] bg-surface-3 dark:bg-dark-3 overflow-hidden">
+                {/* <div className="w-full aspect-[16/9] bg-surface-3 dark:bg-dark-3 overflow-hidden">
                   {image ? (
                     <img
                       src={image}
@@ -102,7 +101,13 @@ export default function Credibility() {
                       </span>
                     </div>
                   )}
-                </div>
+                </div> */}
+                {/* ── Image ── */}
+                {image ? (
+                  <ProjectImage src={image} alt={title} aspectRatio="16/9" />
+                ) : (
+                  <ProjectImagePlaceholder aspectRatio="16/9" />
+                )}
 
                 {/* ── Content ── */}
                 <div className="flex flex-col flex-1 justify-between p-8">
