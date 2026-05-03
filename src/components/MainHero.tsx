@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 const STATS = [
-  { value: "100+", label: "Global clients served" },
-  { value: "1000+", label: "Developers trained" },
-  { value: "7+", label: "Years of excellence" },
+  { value: "60+", label: "Clients served" },
+  { value: "100+", label: "Projects delivered" },
+  { value: "7+", label: "Years building" },
 ];
 
 export default function Hero() {
@@ -62,7 +62,7 @@ export default function Hero() {
         </div>
 
         {/* ── Stats ── */}
-        <div className="flex flex-wrap gap-x-12 gap-y-6 pt-2 border-t border-border dark:border-dark-border">
+        {/* <div className="flex flex-wrap gap-x-12 gap-y-6 pt-2 border-t border-border dark:border-dark-border">
           {STATS.map(({ value, label }) => (
             <div key={value}>
               <p className="font-display font-extrabold text-4xl tracking-tight leading-none text-text-primary dark:text-dark-text-primary">
@@ -73,7 +73,7 @@ export default function Hero() {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -10,8 +10,8 @@ const FEATURED = [
     title: "Voice-first AI for African languages",
     outcome:
       "Designed and built the web platform for an AI product focused on speech models and voice agents for African languages.",
-    metric: "AI Product",
-    metricLabel: "Web platform",
+    metric: "EqualyzAI",
+    metricLabel: "www.equalyz.ai",
     image: "img/work/work-1.jpg",
   },
   {
@@ -20,8 +20,8 @@ const FEATURED = [
     title: "Scaled to 100,000+ users",
     outcome:
       "Redesigned and rebuilt the web platform for Nigeria’s leading data science community, improving usability, performance, and platform stability at scale.",
-    metric: "100,000+",
-    metricLabel: "Community reach",
+    metric: "Data Science Nigeria",
+    metricLabel: "www.datasciencenigeria.org",
     image: "img/work/work-2.jpg",
   },
   {
@@ -30,23 +30,23 @@ const FEATURED = [
     title: "Platform for national rollout",
     outcome:
       "Designed and developed the web platform for a Google-backed initiative delivering digital skills and economic opportunities nationwide.",
-    metric: "Nationwide",
-    metricLabel: "Programme reach",
+    metric: "Skills Sprint",
+    metricLabel: "www.skillsprint.ng",
     image: "img/work/work-3.jpg",
   },
 ];
 
 const STATS = [
-  { value: "20+", label: "Clients served" },
-  { value: "100+", label: "Developers trained" },
-  { value: "7+", label: "Years of experience" },
-  { value: "3+", label: "Countries reached" },
+  { value: "60+", label: "Clients served" },
+  { value: "100+", label: "Projects delivered" },
+  { value: "7+", label: "Years building" },
+  { value: "15+", label: "Countries reached" },
 ];
 
 export default function Credibility() {
   return (
     <section className="w-full bg-surface dark:bg-dark-2">
-      <div className="max-w-7xl mx-auto px-6 py-24">
+      <div className="max-w-7xl mx-auto px-6 py-20">
         {/* ── Section Header ── */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
