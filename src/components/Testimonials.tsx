@@ -14,7 +14,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Bigyard Digital didn't just deliver a website — they delivered a presence. The quality and attention to detail made it immediately clear this was a team that understood what world-class actually means.",
+      "Bigyard Digital didn't just deliver a website. They delivered a presence. The quality and attention to detail made it immediately clear this was a team that understood what world-class actually means.",
     name: "Sebastaine Ebatamehi",
     title: "Founder & CEO",
     imgUrl: "img/test/seb.jpg",

@@ -17,11 +17,11 @@ const SERVICES = [
     tag: "Web Design & Development",
     title: "Global-Ready Web Platforms",
     summary:
-      "Your website is your most powerful sales tool — or your biggest liability. We design and build custom web platforms that position you credibly to international audiences, convert serious visitors, and scale with your business.",
+      "Your website is your most powerful sales tool or your biggest liability. We design and build custom web platforms that position you credibly to international audiences, convert serious visitors, and scale with your business.",
     details: [
       {
         heading: "Who this is for",
-        body: "Founders and organizations who need more than 'just a website.’ You need a platform that reflects your actual level — and helps you win better opportunities.",
+        body: "Founders and organizations who need more than 'just a website.’ You need a platform that reflects your actual level, and helps you win better opportunities.",
       },
       {
         heading: "What we deliver",
@@ -47,11 +47,11 @@ const SERVICES = [
     details: [
       {
         heading: "Who this is for",
-        body: "Businesses that need custom software — internal tools, customer-facing apps, or platforms that don't fit neatly into off-the-shelf solutions.",
+        body: "Businesses that need custom software, internal tools, customer-facing apps, or platforms that don't fit neatly into off-the-shelf solutions.",
       },
       {
         heading: "What we deliver",
-        body: "Scalable, well-architected applications built for the long term. We don't cut corners on code quality — what we build should still be working, and easy to extend, years from now.",
+        body: "Scalable, well-architected applications built for the long term. We don't cut corners on code quality, what we build should still be working, and easy to extend, years from now.",
       },
     ],
     deliverables: [
@@ -73,7 +73,7 @@ const SERVICES = [
     details: [
       {
         heading: "Who this is for",
-        body: "Teams spending too much time on repetitive work, or businesses that know they should be using automation — but haven’t implemented it properly.",
+        body: "Teams spending too much time on repetitive work, or businesses that know they should be using automation, but haven’t implemented it properly.",
       },
       {
         heading: "What we deliver",
@@ -102,13 +102,13 @@ const ENGAGE_STEPS = [
     number: "02",
     title: "Receive a scoped proposal",
     description:
-      "If we're a fit, we'll send a detailed proposal within 48 hours — scope, timeline, deliverables, and investment. No vague estimates.",
+      "If we're a fit, we'll send a detailed proposal within 48 hours scope, timeline, deliverables, and investment. No vague estimates.",
   },
   {
     number: "03",
     title: "We get to work",
     description:
-      "Once agreed, we kick off with a discovery session and begin building. You have visibility throughout — not just at the end.",
+      "Once agreed, we kick off with a discovery session and begin building. You have visibility throughout, not just at the end.",
   },
   {
     number: "04",
@@ -126,7 +126,7 @@ export default function ServicesPage() {
         label="What We Do"
         title="Three services. Built for serious outcomes."
         subtitle="We don’t offer a long list of generic services.
-Every engagement starts with understanding what you’re trying to achieve — then we build exactly what gets you there.
+Every engagement starts with understanding what you’re trying to achieve then we build exactly what gets you there.
 "
       />
 
@@ -285,8 +285,8 @@ Every engagement starts with understanding what you’re trying to achieve — t
               </h2>
               <p className="font-body text-base text-text-secondary dark:text-dark-text-muted max-w-md">
                 Book a free 30-minute strategy call. We'll listen, ask the right
-                questions, and tell you exactly what your project needs — even
-                if it turns out we're not the right fit.
+                questions, and tell you exactly what your project needs, even if
+                it turns out we're not the right fit.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 shrink-0">

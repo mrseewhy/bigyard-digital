@@ -6,42 +6,42 @@ const SERVICES = [
     tag: "Web Design & Development",
     title: "For businesses entering global markets",
     description:
-      "We design platforms that meet international standards — in performance, structure, and perception. Your website is your most powerful sales tool or your biggest liability.",
+      "We design platforms that meet international standards, in performance, structure, and perception. Your website is your most powerful sales tool or your biggest liability.",
     deliverables: [
       "Custom web design & development",
       "Conversion-focused design",
       "Scalable architecture",
       "SEO & performance optimization",
     ],
-    to: "/services#web",
+    to: "/services",
   },
   {
     number: "02",
     tag: "Mobile & Web Applications",
     title: "For teams preparing to scale",
     description:
-      "When growth comes, your platform shouldn't break. We build systems that grow with you — reliable, maintainable, and built for the long term.",
+      "When growth comes, your platform shouldn't break. We build systems that grow with you, reliable, maintainable, and built for the long term.",
     deliverables: [
       "Cross-platform mobile apps (iOS & Android)",
       "Custom web applications",
       "Clean, maintainable codebases",
       "API integrations & backend systems",
     ],
-    to: "/services#apps",
+    to: "/services",
   },
   {
     number: "03",
     tag: "AI & Automation",
     title: "For businesses that want systems, not stress",
     description:
-      "We automate processes and build tools that keep your business running — even when you're not. Less manual work, more room to grow.",
+      "We automate processes and build tools that keep your business running, even when you're not. Less manual work, more room to grow.",
     deliverables: [
       "AI-powered chatbots & assistants",
       "Process automation",
       "CRM & internal tools",
       "Ongoing support & iteration",
     ],
-    to: "/services#automation",
+    to: "/services",
   },
 ];
 
@@ -68,7 +68,7 @@ export default function Services() {
           </div>
           <p className="font-body text-base leading-relaxed text-text-muted dark:text-dark-text-muted max-w-sm">
             We don't offer a menu of generic services. Every engagement starts
-            with understanding what you're trying to achieve — then we build
+            with understanding what you're trying to achieve, then we build
             exactly what gets you there.
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function Services() {
             </p>
             <p className="font-body text-sm text-text-muted dark:text-dark-text-muted">
               Book a free 30-minute strategy call. We'll tell you exactly what
-              you need — even if it's not us.
+              you need, even if it's not us.
             </p>
           </div>
           <Link

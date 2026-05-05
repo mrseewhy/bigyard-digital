@@ -1,13 +1,5 @@
-// ─────────────────────────────────────────────────────────────
-// Contact Page
-// Sections:
-//   1. PageHeader
-//   2. Primary — Calendly embed (book a call)
-//   3. Secondary — Short qualifying form (prefer to write first)
-//   4. Direct contact details
-// ─────────────────────────────────────────────────────────────
-
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import PageHeader from "../components/PageHeader";
 
 // ── Calendly inline embed ──────────────────────────────────
@@ -31,14 +23,32 @@ function CalendlyEmbed() {
 }
 
 // ── Contact Form ───────────────────────────────────────────
+// ── Configuration ──────────────────────────────────────────
+// Replace these with your EmailJS credentials
+const EMAILJS_SERVICE_ID = "service_3nvwlwh";
+const EMAILJS_TEMPLATE_ID = "template_tp38eh1";
+const EMAILJS_PUBLIC_KEY = "-K6gs4o7Un1Cm1Sz0";
+
+// Minimum time before form can be submitted (spam protection)
+const MIN_SUBMIT_TIME = 3000; // 3 seconds
+
+// ── Types ──────────────────────────────────────────────────
 type FormState = {
   name: string;
   email: string;
   company: string;
   budget: string;
   message: string;
+  honeypot: string; // Hidden spam trap field
 };
 
+type FormErrors = {
+  name?: string;
+  email?: string;
+  message?: string;
+};
+
+// ── Budget Options ─────────────────────────────────────────
 const BUDGET_OPTIONS = [
   { value: "", label: "Select a range" },
   { value: "350k-500k", label: "₦350,000 – ₦500,000" },
@@ -48,8 +58,38 @@ const BUDGET_OPTIONS = [
   { value: "unsure", label: "Not sure yet" },
 ];
 
+// ── Styling Classes ────────────────────────────────────────
 const INPUT_BASE =
   "w-full px-4 py-3 rounded-xl border font-body text-sm text-text-primary dark:text-dark-text-primary bg-surface dark:bg-dark-2 border-border dark:border-dark-border placeholder:text-text-faint dark:placeholder:text-dark-text-faint outline-none focus:border-accent-text dark:focus:border-accent transition-colors duration-200";
+
+const INPUT_ERROR =
+  "w-full px-4 py-3 rounded-xl border font-body text-sm text-text-primary dark:text-dark-text-primary bg-surface dark:bg-dark-2 border-red-500 dark:border-red-500 placeholder:text-text-faint dark:placeholder:text-dark-text-faint outline-none focus:border-red-600 dark:focus:border-red-600 transition-colors duration-200";
+
+// ── Validation Helpers ─────────────────────────────────────
+const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const validateForm = (form: FormState): FormErrors => {
+  const errors: FormErrors = {};
+
+  if (!form.name.trim()) {
+    errors.name = "Please enter your name";
+  }
+
+  if (!form.email.trim()) {
+    errors.email = "Please enter your email address";
+  } else if (!isValidEmail(form.email)) {
+    errors.email = "Please enter a valid email address";
+  }
+
+  if (!form.message.trim()) {
+    errors.message = "Please tell us about your project";
+  }
+
+  return errors;
+};
 
 function ContactForm() {
   const [form, setForm] = useState<FormState>({
@@ -58,25 +98,129 @@ function ContactForm() {
     company: "",
     budget: "",
     message: "",
+    honeypot: "", // Hidden spam trap
   });
-  const [submitted, setSubmitted] = useState(false);
 
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  // Track when form was first loaded/interacted with
+  const formLoadTime = useRef<number>(Date.now());
+  const hasInteracted = useRef<boolean>(false);
+
+  // Reset form load time on first interaction
+  useEffect(() => {
+    const handleInteraction = () => {
+      if (!hasInteracted.current) {
+        formLoadTime.current = Date.now();
+        hasInteracted.current = true;
+      }
+    };
+
+    window.addEventListener("focus", handleInteraction, { once: true });
+    window.addEventListener("click", handleInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener("focus", handleInteraction);
+      window.removeEventListener("click", handleInteraction);
+    };
+  }, []);
+
+  // Handle input changes
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >,
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+
+    // Clear error for this field when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  // Check if form is valid (for button state)
+  const isFormValid = (): boolean => {
+    return (
+      form.name.trim() !== "" &&
+      form.email.trim() !== "" &&
+      isValidEmail(form.email) &&
+      form.message.trim() !== ""
+    );
+  };
+
+  // Spam protection checks
+  const passesSpamChecks = (): boolean => {
+    // Check honeypot field
+    if (form.honeypot !== "") {
+      console.warn("Spam detected: honeypot field filled");
+      return false;
+    }
+
+    // Check time-based protection
+    const timeTaken = Date.now() - formLoadTime.current;
+    if (timeTaken < MIN_SUBMIT_TIME) {
+      console.warn("Spam detected: form submitted too quickly");
+      return false;
+    }
+
+    return true;
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    // Replace with your form submission logic
-    // e.g. fetch to your API, Formspree, EmailJS, etc.
-    console.log("Form submitted:", form);
-    setSubmitted(true);
+
+    // Validate form
+    const validationErrors = validateForm(form);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    // Check spam protection
+    if (!passesSpamChecks()) {
+      // Fail silently to not alert spammers
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      // Prepare template params (exclude honeypot)
+      const templateParams = {
+        from_name: form.name,
+        from_email: form.email,
+        company: form.company || "Not specified",
+        budget: form.budget || "Not specified",
+        message: form.message,
+      };
+
+      // Send email via EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY,
+      );
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setSubmitError(
+        "Something went wrong. Please try again or email us directly at info@bigyarddigital.com",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
+  // Success state
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
@@ -94,43 +238,86 @@ function ContactForm() {
 
   return (
     <div className="flex flex-col gap-5">
+      {/* Honeypot field - hidden from users and screen readers */}
+      <input
+        type="text"
+        name="honeypot"
+        value={form.honeypot}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          width: "1px",
+          height: "1px",
+          opacity: 0,
+        }}
+      />
+
       {/* Name + Email */}
       <div className="grid sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">
-          <label className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted">
-            Full Name
+          <label
+            htmlFor="name"
+            className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted"
+          >
+            Full Name <span className="text-red-500">*</span>
           </label>
           <input
+            id="name"
             name="name"
             type="text"
             placeholder="Your name"
             value={form.name}
             onChange={handleChange}
-            className={INPUT_BASE}
+            className={errors.name ? INPUT_ERROR : INPUT_BASE}
+            required
           />
+          {errors.name && (
+            <p className="text-red-500 dark:text-red-400 text-xs mt-1">
+              {errors.name}
+            </p>
+          )}
         </div>
+
         <div className="flex flex-col gap-2">
-          <label className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted">
-            Email Address
+          <label
+            htmlFor="email"
+            className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted"
+          >
+            Email Address <span className="text-red-500">*</span>
           </label>
           <input
+            id="email"
             name="email"
             type="email"
             placeholder="you@company.com"
             value={form.email}
             onChange={handleChange}
-            className={INPUT_BASE}
+            className={errors.email ? INPUT_ERROR : INPUT_BASE}
+            required
           />
+          {errors.email && (
+            <p className="text-red-500 dark:text-red-400 text-xs mt-1">
+              {errors.email}
+            </p>
+          )}
         </div>
       </div>
 
       {/* Company + Budget */}
       <div className="grid sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">
-          <label className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted">
+          <label
+            htmlFor="company"
+            className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted"
+          >
             Company / Project
           </label>
           <input
+            id="company"
             name="company"
             type="text"
             placeholder="Company or project name"
@@ -139,11 +326,16 @@ function ContactForm() {
             className={INPUT_BASE}
           />
         </div>
+
         <div className="flex flex-col gap-2">
-          <label className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted">
+          <label
+            htmlFor="budget"
+            className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted"
+          >
             Budget Range
           </label>
           <select
+            id="budget"
             name="budget"
             value={form.budget}
             onChange={handleChange}
@@ -160,25 +352,75 @@ function ContactForm() {
 
       {/* Message */}
       <div className="flex flex-col gap-2">
-        <label className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted">
-          Tell Us About Your Project
+        <label
+          htmlFor="message"
+          className="font-body text-xs font-semibold tracking-widest uppercase text-text-muted dark:text-dark-text-muted"
+        >
+          Tell Us About Your Project <span className="text-red-500">*</span>
         </label>
         <textarea
+          id="message"
           name="message"
           placeholder="Describe what you're building, what problem you're solving, and what you need from us."
           value={form.message}
           onChange={handleChange}
           rows={5}
-          className={`${INPUT_BASE} resize-none`}
+          className={`${errors.message ? INPUT_ERROR : INPUT_BASE} resize-none`}
+          required
         />
+        {errors.message && (
+          <p className="text-red-500 dark:text-red-400 text-xs mt-1">
+            {errors.message}
+          </p>
+        )}
       </div>
 
-      {/* Submit */}
+      {/* Error message */}
+      {submitError && (
+        <div className="p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+          <p className="text-red-600 dark:text-red-400 text-sm">
+            {submitError}
+          </p>
+        </div>
+      )}
+
+      {/* Submit Button */}
       <button
         onClick={handleSubmit}
-        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-dark-base text-sm font-bold tracking-wide transition-all duration-200 hover:bg-accent-hover hover:scale-105 w-full sm:w-fit mt-2"
+        disabled={!isFormValid() || isSubmitting}
+        className={`inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-bold tracking-wide transition-all duration-200 w-full sm:w-fit mt-2 ${
+          !isFormValid() || isSubmitting
+            ? "bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed"
+            : "bg-accent text-dark-base hover:bg-accent-hover hover:scale-105"
+        }`}
       >
-        Send Your Brief →
+        {isSubmitting ? (
+          <>
+            <svg
+              className="animate-spin h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            Sending...
+          </>
+        ) : (
+          <>Send Your Brief →</>
+        )}
       </button>
 
       <p className="font-body text-xs text-text-faint dark:text-dark-text-faint">
@@ -242,7 +484,7 @@ export default function Contact() {
                 <div>
                   <p className="font-body text-base leading-relaxed text-text-secondary dark:text-dark-text-muted mb-8 max-w-lg">
                     Prefer to write first? Tell us about your project and we'll
-                    come back to you with thoughts and — if we're a fit — a
+                    come back to you with thoughts and if we're a fit. a
                     suggested call time.
                   </p>
                   <ContactForm />
@@ -304,7 +546,7 @@ export default function Contact() {
                 <div className="flex flex-col gap-4">
                   {[
                     "We respond within 24 hours on business days",
-                    "No hard sell — just an honest conversation",
+                    "No hard sell, just an honest conversation",
                     "We'll tell you if we're not the right fit",
                     "Proposals delivered within 48 hours of a call",
                   ].map((item) => (

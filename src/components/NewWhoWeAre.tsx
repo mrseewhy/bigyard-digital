@@ -4,7 +4,7 @@ const VALUES = [
   {
     title: "No cheap work",
     description:
-      "We don't race to the bottom on price. Every project we take on gets our full attention — or we don't take it on.",
+      "We don't race to the bottom on price. Every project we take on gets our full attention or we don't take it on.",
   },
   {
     title: "Outcomes over output",
@@ -45,7 +45,7 @@ export default function WhoWeAre() {
               </p>
               <p className="font-body text-base leading-relaxed text-text-secondary dark:text-dark-text-secondary">
                 At Bigyard Digital, we design and build platforms that do more
-                than exist online — they position your business for growth.
+                than exist online, they position your business for growth.
               </p>
               <p className="font-body text-base leading-relaxed text-text-secondary dark:text-dark-text-secondary">
                 We work with founders, teams, and organizations who understand

@@ -141,7 +141,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     challenge:
       "The platform needed to present complex HSE services in a way that was both accessible and credible. It also had to support decision-makers who often evaluate multiple vendors quickly.",
     approach:
-      "We restructured the entire information architecture around clarity and hierarchy — grouping services logically, simplifying navigation, and refining messaging to align with how corporate clients assess HSE providers.",
+      "We restructured the entire information architecture around clarity and hierarchy, grouping services logically, simplifying navigation, and refining messaging to align with how corporate clients assess HSE providers.",
     execution:
       "Built a React-based platform with strong typographic hierarchy, clear service segmentation, and performance optimisation for mobile and desktop. Key pages were designed to answer common client questions upfront, reducing friction in decision-making.",
     outcome:
@@ -187,7 +187,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     challenge:
       "The biggest risk was friction. Any complexity in the experience would reduce participation rates.",
     approach:
-      "We reduced the platform to its essential function — clear messaging, a single primary action, and minimal distractions.",
+      "We reduced the platform to its essential functions, clear messaging, a single primary action, and minimal distractions.",
     execution:
       "Built a lightweight, mobile-first platform optimised for speed and ease of use, ensuring users could commit within seconds.",
     outcome:
@@ -210,7 +210,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     challenge:
       "Bridging the gap between technical depth and user understanding without diluting the product’s sophistication.",
     approach:
-      "We shifted the narrative from features to use cases — structuring the platform around how the technology is applied in real environments.",
+      "We shifted the narrative from features to use cases, structuring the platform around how the technology is applied in real environments.",
     execution:
       "Delivered a redesigned interface with clearer content flow, improved messaging, and a refined visual system that supports comprehension.",
     outcome:
@@ -224,15 +224,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     category: "Web Platform",
     tags: ["Web Design", "Development", "React"],
     summary:
-      "Elevated DSN’s digital platform to reflect its position as Nigeria’s leading data science community — strengthening credibility with global partners and stakeholders.",
+      "Elevated DSN’s digital platform to reflect its position as Nigeria’s leading data science community, strengthening credibility with global partners and stakeholders.",
     liveUrl: "https://datasciencenigeria.org",
     thumbnail: "/img/portfolio/dsn.jpg",
     situation:
-      "Data Science Nigeria is the largest data science community in the country, with over 50,000 members and partnerships with global organisations. Despite this scale, their web presence did not reflect their influence — creating a credibility gap in conversations with international partners and sponsors.",
+      "Data Science Nigeria is the largest data science community in the country, with over 50,000 members and partnerships with global organisations. Despite this scale, their web presence did not reflect their influence, creating a credibility gap in conversations with international partners and sponsors.",
     challenge:
-      "The existing platform was difficult to navigate, visually inconsistent, and slow to load. The challenge went beyond redesign — it required rebuilding trust in the organisation’s digital presence without disrupting an active community that relied on the platform.",
+      "The existing platform was difficult to navigate, visually inconsistent, and slow to load. The challenge went beyond redesign, it required rebuilding trust in the organisation’s digital presence without disrupting an active community that relied on the platform.",
     approach:
-      "We began with a full audit of content structure, user flows, and performance. Three core audiences were identified — community members, corporate partners, and academic institutions — and the platform was restructured to provide clear, intentional pathways for each. The visual direction balanced credibility with accessibility.",
+      "We began with a full audit of content structure, user flows, and performance. Three core audiences were identified, community members, corporate partners, and academic institutions, and the platform was restructured to provide clear, intentional pathways for each. The visual direction balanced credibility with accessibility.",
     execution:
       "The platform was rebuilt with a focus on performance, clarity, and scalability. Content was restructured to reduce cognitive load, while a flexible system was implemented to allow the DSN team to manage updates independently. Performance optimisation ensured fast load times even on lower-bandwidth mobile connections.",
     outcome:
@@ -261,7 +261,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     challenge:
       "Ensuring usability across varying levels of digital literacy and network conditions.",
     approach:
-      "We designed for inclusivity — simplifying navigation, structuring content clearly, and prioritising performance across devices.",
+      "We designed for inclusivity, simplifying navigation, structuring content clearly, and prioritising performance across devices.",
     execution:
       "Built a responsive platform with structured learning pathways, optimised loading times, and clear content hierarchy.",
     outcome:

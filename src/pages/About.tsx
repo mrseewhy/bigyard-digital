@@ -17,7 +17,7 @@ const VALUES = [
     number: "01",
     title: "Premium is a standard, not a price tag",
     description:
-      "We don’t charge more to appear exclusive. We charge what serious work costs. Every decision — from design to code — is made with intention.",
+      "We don’t charge more to appear exclusive. We charge what serious work costs. Every decision from design to code is made with intention.",
   },
   {
     number: "02",
@@ -29,13 +29,13 @@ const VALUES = [
     number: "03",
     title: "African excellence, global standards",
     description:
-      "We build with context and ambition. What we produce holds up anywhere — not just locally.",
+      "We build with context and ambition. What we produce holds up anywhere not just locally.",
   },
   {
     number: "04",
     title: "Fewer projects, deeper focus",
     description:
-      "We deliberately limit how much we take on.Not because we can’t do more — because the work is better when we’re fully invested.",
+      "We deliberately limit how much we take on.Not because we can’t do more because the work is better when we’re fully invested.",
   },
 ];
 
@@ -44,13 +44,13 @@ const PROCESS = [
     number: "01",
     title: "Discovery",
     description:
-      "We take time to understand your business properly — your goals, your audience, and what success actually looks like. No assumptions. No shortcuts.",
+      "We take time to understand your business properly, your goals, your audience, and what success actually looks like. No assumptions. No shortcuts.",
   },
   {
     number: "02",
     title: "Strategy",
     description:
-      "Before anything is designed, we define structure, positioning, and direction. This is where most projects either succeed or fail — so we take it seriously.",
+      "Before anything is designed, we define structure, positioning, and direction. This is where most projects either succeed or fail so we take it seriously.",
   },
   {
     number: "03",
@@ -176,7 +176,7 @@ export default function About() {
             </div>
             <p className="font-body text-base leading-relaxed text-text-muted dark:text-dark-text-muted max-w-sm">
               These aren't words on a wall. They're the decisions we make every
-              day — in how we work, what we take on, and what we say no to.
+              day in how we work, what we take on, and what we say no to.
             </p>
           </div>
 
