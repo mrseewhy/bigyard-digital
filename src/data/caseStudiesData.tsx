@@ -135,7 +135,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Transformed TAB HSE’s digital presence into a clear, authoritative platform that reflects its standing in Nigeria’s health, safety, and environmental sector.",
     liveUrl: "https://tabhseservices.com/",
-    thumbnail: "/images/work/tab-hse-thumb.jpg",
+    thumbnail: "/img/portfolio/tabhse-1.jpg",
     situation:
       "TAB HSE operates in a credibility-sensitive industry where trust determines contract decisions. Despite strong expertise and client history, their previous website lacked the structure and clarity needed to communicate that authority to corporate stakeholders.",
     challenge:
@@ -146,7 +146,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Built a React-based platform with strong typographic hierarchy, clear service segmentation, and performance optimisation for mobile and desktop. Key pages were designed to answer common client questions upfront, reducing friction in decision-making.",
     outcome:
       "The new platform reinforces TAB HSE’s authority, shortens the sales conversation, and improves first impressions with corporate and industrial clients.",
-    images: ["/images/work/tab-hse-1.jpg"],
+    images: ["/img/portfolio/tabhse-1.jpg"],
   },
 
   {
@@ -176,12 +176,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "iwillvotein2027",
     title: "Designing a High-Conversion Platform for Civic Participation",
     client: "IWillVoteIn2027",
-    category: "Campaign Platform",
+    category: "Web App",
     tags: ["Web Design", "Development"],
     summary:
       "Created a focused digital platform that drives user commitment and participation in Nigeria’s 2027 elections.",
     liveUrl: "https://iwillvotein2027.ng/",
-    thumbnail: "/images/work/vote-thumb.jpg",
+    thumbnail: "/img/portfolio/iwill.jpg",
     situation:
       "The campaign required a platform that could quickly communicate its purpose and encourage action across a broad audience.",
     challenge:
@@ -192,7 +192,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Built a lightweight, mobile-first platform optimised for speed and ease of use, ensuring users could commit within seconds.",
     outcome:
       "A high-conversion platform that maximises engagement and supports viral sharing across social channels.",
-    images: ["/images/work/vote-1.jpg"],
+    images: ["/img/portfolio/iwill.jpg"],
   },
 
   {
@@ -204,7 +204,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Redesigned the platform to make a technically complex voice AI product understandable and compelling to partners and stakeholders.",
     liveUrl: "https://equalyz.ai/",
-    thumbnail: "/images/work/equalyz-thumb.jpg",
+    thumbnail: "/img/portfolio/eqai.jpg",
     situation:
       "Equalyz AI builds voice-first solutions for African dialects, but their previous platform did not clearly communicate the product’s capabilities or real-world applications.",
     challenge:
@@ -215,7 +215,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Delivered a redesigned interface with clearer content flow, improved messaging, and a refined visual system that supports comprehension.",
     outcome:
       "The platform now communicates the product more effectively, improving engagement with partners and reducing the need for additional explanation.",
-    images: ["/images/work/equalyz-1.jpg"],
+    images: ["/img/portfolio/eqai.jpg"],
   },
   {
     slug: "data-science-nigeria",
@@ -226,7 +226,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Elevated DSN’s digital platform to reflect its position as Nigeria’s leading data science community — strengthening credibility with global partners and stakeholders.",
     liveUrl: "https://datasciencenigeria.org",
-    thumbnail: "/images/work/dsn-thumb.jpg",
+    thumbnail: "/img/portfolio/dsn.jpg",
     situation:
       "Data Science Nigeria is the largest data science community in the country, with over 50,000 members and partnerships with global organisations. Despite this scale, their web presence did not reflect their influence — creating a credibility gap in conversations with international partners and sponsors.",
     challenge:
@@ -237,7 +237,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "The platform was rebuilt with a focus on performance, clarity, and scalability. Content was restructured to reduce cognitive load, while a flexible system was implemented to allow the DSN team to manage updates independently. Performance optimisation ensured fast load times even on lower-bandwidth mobile connections.",
     outcome:
       "The new platform significantly improved first impressions in partner conversations. DSN reported that the website now communicates their value more effectively, reducing the need for explanation and strengthening credibility with international stakeholders.",
-    images: ["/images/work/dsn-1.jpg", "/images/work/dsn-2.jpg"],
+    images: ["/img/portfolio/dsn.jpg"],
     testimonial: {
       quote:
         "The new platform changed how international partners perceive us from the first interaction. It finally reflects the scale of what DSN actually is.",
@@ -255,7 +255,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Developed a scalable platform supporting a Google-backed initiative delivering digital and creative skills at scale.",
     liveUrl: "https://skillsprint.ng/",
-    thumbnail: "/images/work/skills-thumb.jpg",
+    thumbnail: "/img/portfolio/skill.jpg",
     situation:
       "The programme aimed to reach a large and diverse audience across Nigeria, requiring a platform that could handle scale while remaining accessible.",
     challenge:
@@ -266,7 +266,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Built a responsive platform with structured learning pathways, optimised loading times, and clear content hierarchy.",
     outcome:
       "A platform capable of supporting large-scale participation and programme delivery without compromising usability.",
-    images: ["/images/work/skills-1.jpg"],
+    images: ["/img/portfolio/skill.jpg"],
   },
 
   {
@@ -278,7 +278,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Redesigned the platform to better communicate programmes, impact, and mission.",
     liveUrl: "https://mindthegap.ng/",
-    thumbnail: "/images/work/mtg-thumb.jpg",
+    thumbnail: "/img/portfolio/mind.jpg",
     situation:
       "MindTheGap’s work spans AI literacy, youth empowerment, and entrepreneurship, but the platform did not clearly connect these initiatives.",
     challenge:
@@ -289,7 +289,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Delivered a redesigned platform with improved navigation and content clarity.",
     outcome:
       "Stronger communication with stakeholders and improved perception of impact.",
-    images: ["/images/work/mtg-1.jpg"],
+    images: ["/img/portfolio/mind.jpg"],
   },
 
   {
@@ -301,7 +301,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Built a structured platform supporting youth leadership and policy engagement programmes.",
     liveUrl: "https://cypnigeria.org/",
-    thumbnail: "/images/work/cyp-thumb.jpg",
+    thumbnail: "/img/portfolio/cyp.jpg",
     situation:
       "CYP Nigeria engages a diverse audience of youth leaders, policymakers, and stakeholders.",
     challenge:
@@ -311,7 +311,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     execution:
       "Developed a responsive platform with clear navigation and content hierarchy.",
     outcome: "Improved accessibility and programme visibility.",
-    images: ["/images/work/cyp-1.jpg"],
+    images: ["/img/portfolio/cyp.jpg"],
   },
 
   {
@@ -323,7 +323,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Redesigned the platform to support both affordable and premium housing offerings.",
     liveUrl: "https://brooknig.com/",
-    thumbnail: "/images/work/brook-thumb.jpg",
+    thumbnail: "/img/portfolio/brook.jpg",
     situation:
       "Brook Assets operates across multiple real estate segments, from affordable housing to luxury developments.",
     challenge:
@@ -333,7 +333,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     execution:
       "Delivered a refined platform with structured navigation and improved clarity.",
     outcome: "Stronger positioning across different buyer segments.",
-    images: ["/images/work/brook-1.jpg"],
+    images: ["/img/portfolio/brook.jpg"],
   },
 
   {
@@ -345,7 +345,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Built a platform that simplifies how users understand and access allied health services.",
     liveUrl: "https://functionalways.com.au/",
-    thumbnail: "/images/work/fw-thumb.jpg",
+    thumbnail: "/img/portfolio/fw.jpg",
     situation:
       "Healthcare users often navigate complex needs and require clear guidance.",
     challenge: "Ensuring services are easy to understand and access.",
@@ -353,7 +353,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     execution:
       "Developed a clean, responsive platform with clear service pathways.",
     outcome: "Improved user understanding and service accessibility.",
-    images: ["/images/work/fw-1.jpg"],
+    images: ["/img/portfolio/fw.jpg"],
   },
 
   {
@@ -365,7 +365,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Built a platform that communicates care, trust, and professionalism for disability support services.",
     liveUrl: "http://unitylifecare.com.au/",
-    thumbnail: "/images/work/unity-thumb.jpg",
+    thumbnail: "/img/portfolio/unity.jpg",
     situation:
       "Families and coordinators rely on clear, trustworthy information when selecting care providers.",
     challenge: "Balancing emotional tone with structured information.",
@@ -373,7 +373,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     execution:
       "Developed an accessible platform with structured content and intuitive navigation.",
     outcome: "Improved trust and clearer communication with users.",
-    images: ["/images/work/unity-1.jpg"],
+    images: ["/img/portfolio/unity.jpg"],
   },
 
   {
@@ -385,7 +385,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Created a platform connecting Nigerians in Australia through events and shared identity.",
     liveUrl: "https://naact.org.au/",
-    thumbnail: "/images/work/naact-thumb.jpg",
+    thumbnail: "/img/portfolio/naact.jpg",
     situation:
       "The association needed a centralised platform for communication and engagement.",
     challenge: "Creating a sense of community in a structured digital format.",
@@ -393,7 +393,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     execution:
       "Built a responsive platform with clear navigation and event visibility.",
     outcome: "Improved engagement and communication within the community.",
-    images: ["/images/work/naact-1.jpg"],
+    images: ["/img/portfolio/naact.jpg"],
   },
 
   {
@@ -401,12 +401,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     title:
       "Designing a Portfolio That Converts Creative Work Into Opportunities",
     client: "Stories Click",
-    category: "Portfolio",
+    category: "Web Platform",
     tags: ["Web Design", "Creative"],
     summary:
       "Built a portfolio platform that attracts international clients and showcases creative work effectively.",
     liveUrl: "https://storiesclick.co.uk/",
-    thumbnail: "/images/work/stories-thumb.jpg",
+    thumbnail: "/img/portfolio/story.jpg",
     situation:
       "The client needed a platform that reflects both creative identity and professionalism.",
     challenge: "Balancing strong visual storytelling with usability.",
@@ -414,7 +414,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     execution:
       "Developed a fast, image-focused platform with smooth transitions.",
     outcome: "Increased visibility and client inquiries.",
-    images: ["/images/work/stories-1.jpg"],
+    images: ["/img/portfolio/story.jpg"],
   },
 
   {
@@ -426,14 +426,14 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Developed a platform that supports both storytelling and educational outreach.",
     liveUrl: "https://abimbolaalaka.com/",
-    thumbnail: "/images/work/abimbola-thumb.jpg",
+    thumbnail: "/img/portfolio/bim.jpg",
     situation:
       "The platform needed to communicate both creative and educational value.",
     challenge: "Maintaining clarity while expressing personality.",
     approach: "We used a clean editorial layout.",
     execution: "Built a structured, readable platform.",
     outcome: "Improved audience engagement and visibility.",
-    images: ["/images/work/abimbola-1.jpg"],
+    images: ["/img/portfolio/bim.jpg"],
   },
 
   {
@@ -446,13 +446,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       "Built a platform supporting sustainability and HSE awareness initiatives.",
     liveUrl: "https://theceil.org/",
-    thumbnail: "/images/work/ceil-thumb.jpg",
+    thumbnail: "/img/portfolio/ceil.jpg",
     situation:
       "The organisation needed a platform to communicate its initiatives and impact.",
     challenge: "Balancing authority with accessibility.",
     approach: "We structured content around programmes and outcomes.",
     execution: "Delivered a clean, structured platform.",
     outcome: "Improved awareness and engagement.",
-    images: ["/images/work/ceil-1.jpg"],
+    images: ["/img/portfolio/ceil.jpg"],
   },
 ];

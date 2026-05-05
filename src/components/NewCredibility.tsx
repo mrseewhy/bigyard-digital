@@ -1,38 +1,38 @@
 import { Link } from "react-router-dom";
-import ProjectImage, {
-  ProjectImagePlaceholder,
-} from "../components/ProjectImage";
+// import ProjectImage, {
+//   ProjectImagePlaceholder,
+// } from "../components/ProjectImage";
 
 const FEATURED = [
   {
-    slug: "gates-foundation",
+    slug: "equalyz-ai",
     category: "AI PLATFORM",
     title: "Voice-first AI for African languages",
     outcome:
       "Designed and built the web platform for an AI product focused on speech models and voice agents for African languages.",
     metric: "EqualyzAI",
     metricLabel: "www.equalyz.ai",
-    image: "img/work/work-1.jpg",
+    image: "/img/portfolio/eqai.jpg",
   },
   {
     slug: "data-science-nigeria",
     category: "Tech Community",
     title: "Scaled to 100,000+ users",
     outcome:
-      "Redesigned and rebuilt the web platform for Nigeria’s leading data science community, improving usability, performance, and platform stability at scale.",
-    metric: "Data Science Nigeria",
+      "Redesigned the web platform for Nigeria’s leading data science community, improving usability, performance, and platform stability.",
+    metric: "DSN",
     metricLabel: "www.datasciencenigeria.org",
-    image: "img/work/work-2.jpg",
+    image: "/img/portfolio/dsn.jpg",
   },
   {
-    slug: "tradecrib",
+    slug: "skills-sprint",
     category: "PUBLIC SECTOR",
     title: "Platform for national rollout",
     outcome:
       "Designed and developed the web platform for a Google-backed initiative delivering digital skills and economic opportunities nationwide.",
     metric: "Skills Sprint",
     metricLabel: "www.skillsprint.ng",
-    image: "img/work/work-3.jpg",
+    image: "/img/portfolio/skill.jpg",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function Credibility() {
                 className="group flex flex-col justify-between rounded-2xl border border-border dark:border-dark-border bg-surface-2 dark:bg-dark-base hover:border-border-2 dark:hover:border-dark-border-2 transition-colors duration-200 overflow-hidden"
               >
                 {/* ── Image ── */}
-                {/* <div className="w-full aspect-[16/9] bg-surface-3 dark:bg-dark-3 overflow-hidden">
+                <div className="w-full aspect-[16/9] bg-surface-3 dark:bg-dark-3 overflow-hidden">
                   {image ? (
                     <img
                       src={image}
@@ -101,13 +101,13 @@ export default function Credibility() {
                       </span>
                     </div>
                   )}
-                </div> */}
+                </div>
                 {/* ── Image ── */}
-                {image ? (
+                {/* {image ? (
                   <ProjectImage src={image} alt={title} aspectRatio="16/9" />
                 ) : (
                   <ProjectImagePlaceholder aspectRatio="16/9" />
-                )}
+                )} */}
 
                 {/* ── Content ── */}
                 <div className="flex flex-col flex-1 justify-between p-8">
