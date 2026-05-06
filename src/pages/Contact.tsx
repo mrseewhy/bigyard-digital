@@ -28,6 +28,7 @@ function CalendlyEmbed() {
 const EMAILJS_SERVICE_ID = "service_3nvwlwh";
 const EMAILJS_TEMPLATE_ID = "template_tp38eh1";
 const EMAILJS_PUBLIC_KEY = "-K6gs4o7Un1Cm1Sz0";
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 // Minimum time before form can be submitted (spam protection)
 const MIN_SUBMIT_TIME = 3000; // 3 seconds
