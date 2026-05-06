@@ -25,7 +25,7 @@ function CalendlyEmbed() {
 // ── Contact Form ───────────────────────────────────────────
 // ── Configuration ──────────────────────────────────────────
 // Replace these with your EmailJS credentials
-const EMAILJS_SERVICE_ID = "service_3nvwlwh";
+const EMAILJS_SERVICE_ID = "service_xkckcfr";
 const EMAILJS_TEMPLATE_ID = "template_tp38eh1";
 const EMAILJS_PUBLIC_KEY = "-K6gs4o7Un1Cm1Sz0";
 emailjs.init(EMAILJS_PUBLIC_KEY);
