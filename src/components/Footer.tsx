@@ -38,12 +38,63 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-12">
           {/* Brand Column */}
           <div className="max-w-xs">
-            <NavLink to="/" className="inline-flex items-center gap-1 mb-5">
+            {/* <NavLink to="/" className="inline-flex items-center gap-1 mb-5">
               <span className="font-display font-extrabold text-lg tracking-widest uppercase text-text-primary dark:text-dark-text-primary">
                 Bigyard
               </span>
               <span className="font-display font-extrabold text-lg tracking-widest uppercase text-accent-text dark:text-accent">
                 {" "}
+                Digital
+              </span>
+            </NavLink> */}
+            <NavLink to="/" className="inline-flex items-center gap-3 mb-5">
+              {/* Icon — light: dark bars + olive cap / dark: white bars + lime cap */}
+              <svg
+                width="24"
+                height="28"
+                viewBox="0 0 22 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <rect
+                  x="0"
+                  y="14"
+                  width="5"
+                  height="12"
+                  rx="1.5"
+                  className="fill-text-primary dark:fill-dark-text-primary"
+                />
+                <rect
+                  x="8"
+                  y="8"
+                  width="5"
+                  height="18"
+                  rx="1.5"
+                  className="fill-text-primary dark:fill-dark-text-primary"
+                />
+                <rect
+                  x="16"
+                  y="1"
+                  width="5"
+                  height="25"
+                  rx="1.5"
+                  className="fill-text-primary dark:fill-dark-text-primary"
+                />
+                <rect
+                  x="16"
+                  y="1"
+                  width="5"
+                  height="6"
+                  rx="1.5"
+                  className="fill-accent-text dark:fill-accent"
+                />
+              </svg>
+
+              <span className="font-display font-extrabold text-xl tracking-widest uppercase text-text-primary dark:text-dark-text-primary">
+                Bigyard
+              </span>
+              <span className="font-display font-extrabold text-xl tracking-widest uppercase text-accent-text dark:text-accent">
                 Digital
               </span>
             </NavLink>

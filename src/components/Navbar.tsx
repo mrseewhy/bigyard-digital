@@ -17,7 +17,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border dark:border-dark-border bg-surface/80 dark:bg-dark-base/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <NavLink
+        {/* <NavLink
           to="/"
           className="flex items-center gap-1 shrink-0"
           onClick={() => setMenuOpen(false)}
@@ -26,6 +26,66 @@ export default function Navbar() {
             Bigyard
           </span>
           <span className="font-display font-extrabold text-base tracking-widest uppercase text-accent-text dark:text-accent">
+            Digital
+          </span>
+        </NavLink> */}
+        <NavLink
+          to="/"
+          className="flex items-center gap-3 shrink-0"
+          onClick={() => setMenuOpen(false)}
+        >
+          {/* Icon — light mode: dark bars + olive cap / dark mode: white bars + lime cap */}
+          <svg
+            width="22"
+            height="26"
+            viewBox="0 0 22 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            {/* Bar 1 — shortest */}
+            <rect
+              x="0"
+              y="14"
+              width="5"
+              height="12"
+              rx="1.5"
+              className="fill-text-primary dark:fill-dark-text-primary"
+            />
+            {/* Bar 2 — mid */}
+            <rect
+              x="8"
+              y="8"
+              width="5"
+              height="18"
+              rx="1.5"
+              className="fill-text-primary dark:fill-dark-text-primary"
+            />
+            {/* Bar 3 — tallest, main body */}
+            <rect
+              x="16"
+              y="1"
+              width="5"
+              height="25"
+              rx="1.5"
+              className="fill-text-primary dark:fill-dark-text-primary"
+            />
+            {/* Cap on tallest bar — lime in dark, olive in light */}
+            <rect
+              x="16"
+              y="1"
+              width="5"
+              height="6"
+              rx="1.5"
+              className="fill-accent-text dark:fill-accent"
+            />
+          </svg>
+
+          {/* Wordmark */}
+          <span className="font-display font-extrabold text-xl  tracking-widest uppercase text-text-primary dark:text-dark-text-primary">
+            Bigyard
+          </span>
+          <span className="font-display font-extrabold text-xl tracking-widest uppercase text-accent-text dark:text-accent">
             Digital
           </span>
         </NavLink>
