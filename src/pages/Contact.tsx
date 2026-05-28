@@ -509,6 +509,11 @@ export default function Contact() {
                     },
                     {
                       label: "Phone",
+                      value: "+234 901 665 1198",
+                      href: "tel:+2349016651198",
+                    },
+                    {
+                      label: "Phone",
                       value: "+234 703 534 7776",
                       href: "tel:+2347035347776",
                     },

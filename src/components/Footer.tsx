@@ -176,6 +176,12 @@ export default function Footer() {
               info@bigyarddigital.com
             </a>
             <a
+              href="tel:+2349016651198"
+              className="font-body text-xs text-text-muted dark:text-dark-text-faint hover:text-accent-text dark:hover:text-accent transition-colors duration-200"
+            >
+              +234 901 665 1198
+            </a>
+            <a
               href="tel:+2347035347776"
               className="font-body text-xs text-text-muted dark:text-dark-text-faint hover:text-accent-text dark:hover:text-accent transition-colors duration-200"
             >
