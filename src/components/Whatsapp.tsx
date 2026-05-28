@@ -1,5 +1,5 @@
 const WhatsAppFloat = ({
-  phoneNumber = "2347035347776",
+  phoneNumber = "2349016651198",
   message = "Hello I am from your website! Bigyard Digital is the best, I want to work with you.",
 }) => {
   const url = `https://wa.me/${phoneNumber}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
